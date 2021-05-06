@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENGITUNG PERSEGI</title>
+    <link rel="stylesheet" href="style.css">
+<body class="bg-white">
+    <div class="bg-gradient-to-b from-yellow-400 to-red-500  divide-y-4 divide-white divide-opacity-25 h-1/2 ">
+        <div class="text-center text-white font-bold text-4xl mb-4 pt-4">
+            MENGHITUNG LUAS SEGITIGA
+        </div>
+        <div class="flex justify-center " >
+            <button class="bg-yellow-400 text-white hover:bg-yellow-500 py-2 px-4 rounded m-5 font-medium text-2xl w-auto  "> <a href="persegi.html">PERSEGI</a> </button>
+            <button class="bg-yellow-500 hover:bg-yellow-400 text-black py-2 px-4 rounded m-5 font-medium text-2xl w-auto "> <a href="segitiga.html">SEGITIGA</a></button>
+            <button class="bg-yellow-400 text-white hover:bg-yellow-500 py-2 px-4 rounded m-5 font-medium text-2xl w-auto "> <a href="lingkaran.html">LINGKARAN</a></button>
+        </div>
+    </div>
+
+    <div id="app" class="w-full max-w-xl mx-auto mt-5" >
+        <form action="" class="p-7"></form>
+            <div class="flex flex-col">
+                <label for="" class="font-base text-xl mb-4">Masukan Alas</label>
+                <input type="text" name="" id="" v-model="alas"
+                class="border-2 border-red-200 py-2 px-3  rounded  focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent">
+            </div>
+            <div class="flex flex-col mt-7 ">
+                <label for="" class="font-base text-xl mb-4">Masukan Tinggi</label>
+                <input type="text" name="" id="" v-model="tinggi"
+                class="border-2 border-red-200 py-2 px-3  rounded  focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent ">
+            </div>
+            <div class="mt-6 text-center divide-y-4 divide-white">
+                <button class="bg-yellow-400 hover:bg-yellow-500 text-white py-2 px-4 rounded m-5 font-medium text-lg w-auto " v-on:click="menghitungluas" >HITUNG</button>
+            </div>
+            <div class="flex flex-col">
+                <label for="" class="mt-2 text-center font-semibold text-4xl "> {{luas}} </label>
+                <label for="" class="text-red-400 italic text-base text-center text-lg">
+                Luas Segitiga dengan Alas <label for="" class=" text-black text-lg font-semibold"> {{alas}} </label>  
+                dan Tinggi <label for="" class=" text-black text-lg font-semibold"> {{tinggi}} </label>
+                adalah <label for="" class=" text-black text-lg font-bold"> {{luas}} </label>
+                
+            </div>
+        </form>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    alas: 0,
+                    tinggi: 0,
+                    luas: 0,
+                },
+                methods: {
+                    menghitungluas(){
+                        this.luas = 0.5 * this.alas * this.tinggi 
+                    } 
+                }
+            })
+        </script>
+</body>
+</html>
